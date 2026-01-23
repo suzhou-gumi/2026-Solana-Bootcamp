@@ -12,7 +12,7 @@ use crate::{errors::EscrowError, state::Escrow};
 #[derive(Accounts)]
 pub struct Refund<'info> {
     #[account(mut)]
-    pub maker: Signer<'info>,
+    pub maker: SystemAccount<'info>,
     #[account(
         mut,
         close = maker,
